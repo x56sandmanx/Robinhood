@@ -84,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
             Destroy(touchingObject);
             touchingObject = null;
             gameManager.ShowDialogue(false);
+            gameManager.UpdateCounter();
         }
     }
 
