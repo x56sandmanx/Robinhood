@@ -81,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
         //Checking if the player is in range of an item that they can pick up
         if (touchingObject != null && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Picked up object!");
             Destroy(touchingObject);
             touchingObject = null;
             gameManager.ShowDialogue(false);
