@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if (isGrounded && velocity.y < 0)
+        if (characterController.isGrounded && velocity.y < 0)
             velocity.y = -2f;
 
         horizontal = Input.GetAxisRaw("Horizontal");
