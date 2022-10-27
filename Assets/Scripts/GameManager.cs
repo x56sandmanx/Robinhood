@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseScreen;
+    [SerializeField] private GameObject dialogueText;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +41,10 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
         }
 
-    }    
+    }
+
+    public void ShowDialogue(bool showDialog)
+    {
+        dialogueText.SetActive(showDialog);
+    }
 }
