@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject pauseScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,4 +22,19 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void PauseScreen()
+    {
+        if(pauseScreen.activeSelf == true)
+        {
+            pauseScreen.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            pauseScreen.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+    }    
 }

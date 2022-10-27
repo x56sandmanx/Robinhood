@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpHeight = 3f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private GameManager gameManager;
 
     float horizontal;
     float vertical;
@@ -33,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameManager.PauseScreen();
+        }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         Debug.Log(isGrounded);
         Debug.Log(velocity.y);
