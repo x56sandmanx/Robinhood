@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -27,11 +27,15 @@ public class GameManager : MonoBehaviour
     {
         if(pauseScreen.activeSelf == true)
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             pauseScreen.SetActive(false);
             Time.timeScale = 1;
         }
         else
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             pauseScreen.SetActive(true);
             Time.timeScale = 0;
         }
