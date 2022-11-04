@@ -663,6 +663,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &555209769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 555209770}
+  m_Layer: 0
+  m_Name: ShootPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &555209770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555209769}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.686, y: 0, z: -0.318}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1523827887}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &620192311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1491,8 @@ MonoBehaviour:
   sensX: 1000
   sensY: 1000
   orientation: {fileID: 390746960}
+  xRotation: 0
+  yRotation: 0
 --- !u!1 &1003079802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,6 +1922,7 @@ GameObject:
   - component: {fileID: 1523827885}
   - component: {fileID: 1523827888}
   - component: {fileID: 1523827889}
+  - component: {fileID: 1523827890}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1953,17 +1987,18 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523827882}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.25, z: 0}
+  m_LocalRotation: {x: -0, y: -0.4339398, z: -0, w: 0.9009419}
+  m_LocalPosition: {x: -0.03, y: 5.25, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 390746960}
   - {fileID: 1786499718}
   - {fileID: 2110790109}
+  - {fileID: 555209770}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -51.436, z: 0}
 --- !u!114 &1523827888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2003,6 +2038,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1523827890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523827882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63faa55f9dc917b4fa510b30ef9e2c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 7014754143688495322, guid: b50b9dc9f2c226e419b2ae78f12acf8c, type: 3}
+  shootPos: {fileID: 555209770}
+  playerCam: {fileID: 963194230}
+  force: 15
 --- !u!1 &1566781600
 GameObject:
   m_ObjectHideFlags: 0
