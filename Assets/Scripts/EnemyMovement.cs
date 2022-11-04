@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private bool wanderMode = true;
     [SerializeField] private bool isMoving = false;
     [SerializeField] private NavMeshAgent navAgent;
+    [SerializeField] private Transform playerPos;
 
     private float timer;
     private float moveTime;
@@ -29,17 +30,23 @@ public class EnemyMovement : MonoBehaviour
             isMoving = false;
         
         //If enemy is in wander mode and not moving, will start a timer to get a pos to move
-        if(wanderMode && !isMoving)
+        if(wanderMode)
         {
-            //Just adding up the move time while it is less than timer, so it doesn't move every frame
-            if(moveTime < timer)
+            if(!isMoving)
             {
-                moveTime += Time.deltaTime;
+                //Just adding up the move time while it is less than timer, so it doesn't move every frame
+                if(moveTime < timer)
+                {
+                    moveTime += Time.deltaTime;
+                }
+                else
+                    //Get a Random Point to move.
+                    navAgent.SetDestination(RandomNavMeshLocation(10f));
             }
-            else
-                //Get a Random Point to move.
-                navAgent.SetDestination(RandomNavMeshLocation(10f));
-                
+        }
+        else
+        {
+            navAgent.SetDestination(playerPos.position);
         }
     }
 
