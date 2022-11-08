@@ -2130,7 +2130,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 7014754143688495322, guid: b50b9dc9f2c226e419b2ae78f12acf8c, type: 3}
   shootPos: {fileID: 555209770}
   playerCam: {fileID: 963194230}
-  force: 10
+  force: 15
 --- !u!1 &1566781600
 GameObject:
   m_ObjectHideFlags: 0
