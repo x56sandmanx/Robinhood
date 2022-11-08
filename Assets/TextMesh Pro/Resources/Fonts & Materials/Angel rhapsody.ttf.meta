@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 7c1f8b7b5e45c4ccab94204147198961
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Angel rhapsody
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ebb569d0337ff4977bc7edf4a4b45aa2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
