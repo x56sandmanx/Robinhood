@@ -20,7 +20,7 @@ public class PlayerShooting : MonoBehaviour
         if(Input.GetButtonDown("Fire1"))
         {
             //Instantiating object, setting it to the shoot pos, and rotating based off of player look pos, then adding force to shoot forward
-            GameObject arrow = (GameObject)Instantiate(arrowPrefab, shootPos.position, Quaternion.Euler(playerCam.xRotation + 90f, playerCam.yRotation,0));
+            GameObject arrow = (GameObject)Instantiate(arrowPrefab, shootPos.position, Quaternion.Euler(playerCam.xRotation + 90f, playerCam.yRotation,3));
             Rigidbody rb = arrow.GetComponent<Rigidbody>();
             rb.AddForce(arrow.transform.up * force, ForceMode.Impulse);
         }
