@@ -15,9 +15,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Sets the time scale of the level and gets the name of the scene for enemyspawner to know what level it is.
         Time.timeScale = 1;
         level = SceneManager.GetActiveScene().name;
 
+        //Call Spawn Enemies method from Enemy Spawner, passing in the level name to know how many enemies to spawn.
         enemySpawner.SpawnEnemies(level);
     }
 
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
 
     public void PauseScreen()
     {
+        //Checks for if we are in the paused state, to either freeze time and set cursor active, otherwise resume time and hide cursor.
         if(pauseScreen.activeSelf == true)
         {
             Cursor.lockState = CursorLockMode.Locked;

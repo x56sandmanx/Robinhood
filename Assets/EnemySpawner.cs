@@ -21,17 +21,20 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemies(string level)
     {
+        //If statements will check the level name to set the numOfEnemies to certain number
         if(level == "TutorialLevel")
         {
             numOfEnemies = 5;
         }
 
+        //For each number of enemy, we will get a random x and z coord based off the palyers pos, and make a new Vector 3 spawnPos that used thos random x and z, and default to 50 for y
         for(int i=0;i<numOfEnemies;i++)
         {
             float xPos = Random.Range(playerPos.position.x-40, playerPos.position.x+40);
             float zPos = Random.Range(playerPos.position.z-40, playerPos.position.z+40);
             Vector3 spawnPos = new Vector3(xPos,50,zPos);
 
+            //Raycast will checkout how far the object is from the ground with the spawnPos, and on the hit.point we will spawn the enemy in order for the enemy to spawn on the ground
             if(Physics.Raycast(spawnPos, Vector3.down, out RaycastHit hit))
                 Instantiate(enemyObject, hit.point, Quaternion.identity);
         }
