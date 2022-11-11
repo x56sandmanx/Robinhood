@@ -20,7 +20,11 @@ public class PlayerMovement : MonoBehaviour
     float sprintSpeed = 12f;
     float moveSpeed;
     bool isGrounded;
-
+    
+    public AudioSource[] sounds;
+    private AudioSource jump;
+	private AudioSource treasure;
+	private AudioSource move;
 
     Vector3 moveDir;
     Vector3 velocity;
@@ -30,7 +34,13 @@ public class PlayerMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         moveSpeed = walkSpeed;
+        
+        sounds = GetComponents<AudioSource>();
+        jump = sounds[1];
+        treasure = sounds[2];
+        move = sounds[3];
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -58,6 +68,8 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = walkSpeed;
         }
+        
+        
 
         //Moving player based on movement and sprint or not
         characterController.Move(moveDir * moveSpeed * Time.deltaTime);
@@ -66,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            jump.Play();
         }
 
         velocity.y += gravity * Time.deltaTime;
@@ -85,6 +98,7 @@ public class PlayerMovement : MonoBehaviour
             touchingObject = null;
             gameManager.ShowDialogue(false);
             gameManager.UpdateCounter();
+            treasure.Play();
         }
     }
 
