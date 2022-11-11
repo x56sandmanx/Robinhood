@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     float horizontal;
     float vertical;
     float groundDistance = 0.4f;
-    float walkSpeed = 8f;
-    float sprintSpeed = 12f;
+    float walkSpeed = 4f;
+    float sprintSpeed = 6f;
     float moveSpeed;
     bool isGrounded;
     
