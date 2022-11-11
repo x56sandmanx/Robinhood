@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         //Start of random timer for moving and a moveTime that will calculate if the enemy can move or not
         timer = Random.Range(5f,10f);
         moveTime = 0;
