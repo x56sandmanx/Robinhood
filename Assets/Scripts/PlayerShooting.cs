@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private Transform shootPos;
     [SerializeField] private PlayerCam playerCam;
     [SerializeField] private float force;
+    [SerializeField] private GameManager gameManager;
+    public AudioSource[] sounds;
+    private AudioSource arrow;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+		sounds = GetComponents<AudioSource>();
+        arrow = sounds[0];
     }
 
     // Update is called once per frame
@@ -24,6 +30,7 @@ public class PlayerShooting : MonoBehaviour
             arrow.transform.LookAt(shootPos);
             Rigidbody rb = arrow.GetComponent<Rigidbody>();
             rb.AddForce(arrow.transform.up * force, ForceMode.Impulse);
+            arrow.Play();
         }
     }
 }
