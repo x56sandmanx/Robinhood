@@ -10,12 +10,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject dialogueText;
     [SerializeField] private TextMeshProUGUI objectCounter;
-    public string level;
+    [SerializeField] private EnemySpawner enemySpawner;
+    private string level;
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
         level = SceneManager.GetActiveScene().name;
+
+        enemySpawner.SpawnEnemies(level);
     }
 
     // Update is called once per frame
