@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cube
   - Arrow
+  - HealthSlider
   layers:
   - Default
   - TransparentFX
