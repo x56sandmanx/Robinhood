@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private bool isMoving = false;
     [SerializeField] private NavMeshAgent navAgent;
     [SerializeField] private Transform playerPos;
+    [SerializeField] private int health;
 
     private float timer;
     private float moveTime;
@@ -19,6 +20,7 @@ public class EnemyMovement : MonoBehaviour
         //Start of random timer for moving and a moveTime that will calculate if the enemy can move or not
         timer = Random.Range(5f,10f);
         moveTime = 0;
+        health = 5;
     }
 
     // Update is called once per frame
@@ -81,5 +83,17 @@ public class EnemyMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
             wanderMode = true;
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if(other.gameObject.CompareTag("Arrow"))
+        {
+            health--;
+            Destroy(other.gameObject);
+            if(health == 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
