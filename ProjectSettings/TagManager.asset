@@ -8,6 +8,7 @@ TagManager:
   - Arrow
   - Coin
   - GameManager
+  - Enemy
   layers:
   - Default
   - TransparentFX
