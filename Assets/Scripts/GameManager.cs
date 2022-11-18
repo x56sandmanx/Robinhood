@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject dialogueText;
     [SerializeField] private TextMeshProUGUI objectCounter;
     [SerializeField] private EnemySpawner enemySpawner;
+    [SerializeField] private GameObject deleteSaveObject;
     public GameObject coinObject;
     private string level;
     // Start is called before the first frame update
@@ -19,6 +20,14 @@ public class GameManager : MonoBehaviour
         //Sets the time scale of the level and gets the name of the scene for enemyspawner to know what level it is.
         Time.timeScale = 1;
         level = SceneManager.GetActiveScene().name;
+
+        if(level == "TitleScreen")
+        {
+            if(PlayerPrefs.HasKey("coinCount"))
+                deleteSaveObject.SetActive(true);
+            else
+                deleteSaveObject.SetActive(false);
+        }
 
         if(PlayerPrefs.HasKey("coinCount"))
             GameData.coinCount = PlayerPrefs.GetInt("coinCount");
@@ -79,5 +88,11 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("coinCount", GameData.coinCount);
         ChangeScene("TitleScreen");
+    }
+
+    public void DeleteSave()
+    {
+        PlayerPrefs.DeleteAll();
+        deleteSaveObject.SetActive(false);
     }
 }
