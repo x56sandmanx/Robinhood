@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject dialogueText;
     [SerializeField] private TextMeshProUGUI objectCounter;
     [SerializeField] private EnemySpawner enemySpawner;
+    [SerializeField] private GameObject deleteSaveObject;
+    public GameObject coinObject;
     private string level;
     // Start is called before the first frame update
     void Start()
@@ -19,8 +21,26 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         level = SceneManager.GetActiveScene().name;
 
-        //Call Spawn Enemies method from Enemy Spawner, passing in the level name to know how many enemies to spawn.
-        enemySpawner.SpawnEnemies(level);
+        if(level == "TitleScreen")
+        {
+            if(PlayerPrefs.HasKey("coinCount"))
+                deleteSaveObject.SetActive(true);
+            else
+                deleteSaveObject.SetActive(false);
+        }
+
+        if(PlayerPrefs.HasKey("coinCount"))
+            GameData.coinCount = PlayerPrefs.GetInt("coinCount");
+        else
+            GameData.coinCount = 0;
+
+        if(level != "TitleScreen")
+        {
+            objectCounter.text = GameData.coinCount.ToString();
+
+            //Call Spawn Enemies method from Enemy Spawner, passing in the level name to know how many enemies to spawn.
+            enemySpawner.SpawnEnemies(level);
+        }
     }
 
     // Update is called once per frame
@@ -31,7 +51,15 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        if(SceneManager.GetActiveScene().name == "TitleScreen")
+        {
+            if(PlayerPrefs.HasKey("coinCount"))
+                SceneManager.LoadScene("TutorialLevel");
+            else
+                SceneManager.LoadScene("InitialCutscene");
+        }
+        else
+            SceneManager.LoadScene(sceneName);
     }
 
     public void PauseScreen()
@@ -63,6 +91,19 @@ public class GameManager : MonoBehaviour
     {
         int counter = int.Parse(objectCounter.text);
         counter++;
+        GameData.coinCount = counter;
         objectCounter.text = counter.ToString();
+    }
+
+    public void SaveGame()
+    {
+        PlayerPrefs.SetInt("coinCount", GameData.coinCount);
+        ChangeScene("TitleScreen");
+    }
+
+    public void DeleteSave()
+    {
+        PlayerPrefs.DeleteAll();
+        deleteSaveObject.SetActive(false);
     }
 }

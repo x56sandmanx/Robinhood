@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private bool isMoving = false;
     [SerializeField] private NavMeshAgent navAgent;
     [SerializeField] private Transform playerPos;
+    [SerializeField] private int health;
+    [SerializeField] private Slider healthSlider;
+    [SerializeField] private GameObject coinObject;
+    [SerializeField] private GameManager gameManager;
 
     private float timer;
     private float moveTime;
@@ -19,11 +24,16 @@ public class EnemyMovement : MonoBehaviour
         //Start of random timer for moving and a moveTime that will calculate if the enemy can move or not
         timer = Random.Range(5f,10f);
         moveTime = 0;
+        health = 5;
+        healthSlider.value = health;
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        coinObject = gameManager.coinObject;
     }
 
     // Update is called once per frame
     void Update()
     {
+        healthSlider.gameObject.transform.LookAt(playerPos);
         //Checking that if the enemies velocity is something other that 0, that it is moving or not
         if(navAgent.velocity != Vector3.zero)
             isMoving = true;
@@ -81,5 +91,29 @@ public class EnemyMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
             wanderMode = true;
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if(other.gameObject.CompareTag("Arrow"))
+        {
+            health--;
+            Destroy(other.gameObject);
+            StartCoroutine(DecreaseHealth());
+            if(health == 0)
+            {
+                int numOfCoins = Random.Range(1,5);
+                for(int i = 0;i<numOfCoins;i++)
+                    Instantiate(coinObject, gameObject.transform.position, gameObject.transform.rotation);
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    IEnumerator DecreaseHealth(){
+        while(healthSlider.value >= health)
+        {
+            healthSlider.value -= 10 * Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
