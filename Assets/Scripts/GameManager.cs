@@ -48,7 +48,15 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        if(SceneManager.GetActiveScene().name == "TitleScreen")
+        {
+            if(PlayerPrefs.HasKey("coinCount"))
+                SceneManager.LoadScene("TutorialLevel");
+            else
+                SceneManager.LoadScene("InitialCutscene");
+        }
+        else
+            SceneManager.LoadScene(sceneName);
     }
 
     public void PauseScreen()
