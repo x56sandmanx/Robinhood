@@ -2013,7 +2013,7 @@ GameObject:
   - component: {fileID: 1116930425}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2034,6 +2034,7 @@ MonoBehaviour:
   dialogueText: {fileID: 2089880213}
   objectCounter: {fileID: 1003079804}
   enemySpawner: {fileID: 415942380}
+  coinObject: {fileID: 8151820243740295375, guid: ad20c6375df644748a0eb19010c78204, type: 3}
 --- !u!4 &1116930426
 Transform:
   m_ObjectHideFlags: 0

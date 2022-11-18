@@ -104,8 +104,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Cube"))
+        if(other.gameObject.CompareTag("Coin"))
         {
+            Debug.Log("trigger");
             gameManager.ShowDialogue(true);
             touchingObject = other.gameObject;
         }
@@ -113,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Cube"))
+        if (other.gameObject.CompareTag("Coin"))
         {
             gameManager.ShowDialogue(false);
             touchingObject = null;

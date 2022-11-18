@@ -12,6 +12,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Transform playerPos;
     [SerializeField] private int health;
     [SerializeField] private Slider healthSlider;
+    [SerializeField] private GameObject coinObject;
+    [SerializeField] private GameManager gameManager;
 
     private float timer;
     private float moveTime;
@@ -24,6 +26,8 @@ public class EnemyMovement : MonoBehaviour
         moveTime = 0;
         health = 5;
         healthSlider.value = health;
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        coinObject = gameManager.coinObject;
     }
 
     // Update is called once per frame
@@ -97,6 +101,9 @@ public class EnemyMovement : MonoBehaviour
             StartCoroutine(DecreaseHealth());
             if(health == 0)
             {
+                int numOfCoins = Random.Range(1,5);
+                for(int i = 0;i<numOfCoins;i++)
+                    Instantiate(coinObject, gameObject.transform.position, gameObject.transform.rotation);
                 Destroy(gameObject);
             }
         }
@@ -105,7 +112,6 @@ public class EnemyMovement : MonoBehaviour
     IEnumerator DecreaseHealth(){
         while(healthSlider.value >= health)
         {
-            Debug.Log("lowering health");
             healthSlider.value -= 10 * Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }

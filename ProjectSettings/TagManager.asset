@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Cube
   - Arrow
-  - HealthSlider
+  - Coin
+  - GameManager
   layers:
   - Default
   - TransparentFX

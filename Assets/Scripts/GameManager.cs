@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject dialogueText;
     [SerializeField] private TextMeshProUGUI objectCounter;
     [SerializeField] private EnemySpawner enemySpawner;
+    public GameObject coinObject;
     private string level;
     // Start is called before the first frame update
     void Start()
