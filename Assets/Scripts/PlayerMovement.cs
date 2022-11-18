@@ -106,7 +106,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Coin"))
         {
-            Debug.Log("trigger");
             gameManager.ShowDialogue(true);
             touchingObject = other.gameObject;
         }

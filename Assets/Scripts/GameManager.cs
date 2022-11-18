@@ -20,6 +20,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         level = SceneManager.GetActiveScene().name;
 
+        if(PlayerPrefs.HasKey("coinCount"))
+            GameData.coinCount = PlayerPrefs.GetInt("coinCount");
+        else
+            GameData.coinCount = 0;
+
+        objectCounter.text = GameData.coinCount.ToString();
+
         //Call Spawn Enemies method from Enemy Spawner, passing in the level name to know how many enemies to spawn.
         enemySpawner.SpawnEnemies(level);
     }
@@ -64,6 +71,13 @@ public class GameManager : MonoBehaviour
     {
         int counter = int.Parse(objectCounter.text);
         counter++;
+        GameData.coinCount = counter;
         objectCounter.text = counter.ToString();
+    }
+
+    public void SaveGame()
+    {
+        PlayerPrefs.SetInt("coinCount", GameData.coinCount);
+        ChangeScene("TitleScreen");
     }
 }
