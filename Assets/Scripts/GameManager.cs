@@ -34,10 +34,13 @@ public class GameManager : MonoBehaviour
         else
             GameData.coinCount = 0;
 
-        objectCounter.text = GameData.coinCount.ToString();
+        if(level != "TitleScreen")
+        {
+            objectCounter.text = GameData.coinCount.ToString();
 
-        //Call Spawn Enemies method from Enemy Spawner, passing in the level name to know how many enemies to spawn.
-        enemySpawner.SpawnEnemies(level);
+            //Call Spawn Enemies method from Enemy Spawner, passing in the level name to know how many enemies to spawn.
+            enemySpawner.SpawnEnemies(level);
+        }
     }
 
     // Update is called once per frame
