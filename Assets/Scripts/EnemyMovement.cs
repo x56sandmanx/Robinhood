@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
 
     Animator anim;
     [SerializeField] private bool wanderMode = true;
-    [SerializeField] private bool isMoving = false;
+    public bool isMoving = false;
     [SerializeField] private NavMeshAgent navAgent;
     [SerializeField] private Transform playerPos;
     [SerializeField] private int health;
