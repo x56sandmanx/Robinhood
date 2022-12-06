@@ -114,6 +114,8 @@ public class EnemyMovement : MonoBehaviour
                 int numOfCoins = Random.Range(1,5);
                 for(int i = 0;i<numOfCoins;i++)
                     Instantiate(coinObject, gameObject.transform.position, gameObject.transform.rotation);
+                GameData.enemyKills += 1;
+                CheckEnemyKills();
                 Destroy(gameObject);
             }
         }
@@ -124,6 +126,13 @@ public class EnemyMovement : MonoBehaviour
         {
             healthSlider.value -= 10 * Time.deltaTime;
             yield return new WaitForEndOfFrame();
+        }
+    }
+
+    private void CheckEnemyKills(){
+        if(GameData.enemyKills == 30)
+        {
+            Debug.Log("Boss Time!");
         }
     }
 }

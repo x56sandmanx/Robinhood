@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
         //If statements will check the level name to set the numOfEnemies to certain number
         if(level == "TutorialLevel")
         {
-            numOfEnemies = 30;
+            numOfEnemies = 30 - GameData.enemyKills;
         }
 
         //For each number of enemy, we will get a random x and z coord based off the palyers pos, and make a new Vector 3 spawnPos that used thos random x and z, and default to 50 for y

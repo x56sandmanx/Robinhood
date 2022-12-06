@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour
             GameData.coinCount = PlayerPrefs.GetInt("coinCount");
         else
             GameData.coinCount = 0;
+        if(PlayerPrefs.HasKey("enemyKills"))
+            GameData.enemyKills = PlayerPrefs.GetInt("enemyKills");
+        else
+            GameData.enemyKills = 0;
 
         if(level != "TitleScreen")
         {
@@ -98,6 +102,8 @@ public class GameManager : MonoBehaviour
     public void SaveGame()
     {
         PlayerPrefs.SetInt("coinCount", GameData.coinCount);
+        //PlayerPrefs.SetFloat("health", GameData.health);
+        PlayerPrefs.SetInt("enemyKills", GameData.enemyKills);
         ChangeScene("TitleScreen");
     }
 
