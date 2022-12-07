@@ -83,11 +83,15 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q))
         {
             GameData.enemyKills++;
-            Debug.Log("Enemies Killed: "+GameData.enemyKills);
+            gameManager.UpdateEnemyCounter();
             if(GameData.level == "TutorialLevel" && GameData.enemyKills == 10)
             {
                 GameData.level = "Level01";
                 GameData.enemyKills = 0;
+                PlayerPrefs.SetString("level",GameData.level);
+                PlayerPrefs.SetInt("enemyKills",GameData.enemyKills);
+                Debug.Log(GameData.level);
+                Debug.Log(GameData.enemyKills);
                 gameManager.ChangeScene(GameData.level);
             }
         }

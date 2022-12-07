@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject dialogueText;
     [SerializeField] private TextMeshProUGUI objectCounter;
+    [SerializeField] private TextMeshProUGUI enemyCounter;
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private GameObject deleteSaveObject;
     [SerializeField] private GameObject HTPScreen;
@@ -40,21 +41,30 @@ public class GameManager : MonoBehaviour
         else
             GameData.enemyKills = 0;
         if(PlayerPrefs.HasKey("level"))
+        {
             GameData.level = PlayerPrefs.GetString("level");
+            Debug.Log("Getting Level");
+        }
         else
             GameData.level = "TutorialLevel";
 
         if(level != "TitleScreen")
         {
             objectCounter.text = GameData.coinCount.ToString();
+            if(GameData.level == "TutorialLevel")
+            {
+                int counter = 10 - GameData.enemyKills;
+                enemyCounter.text = counter.ToString();
+            }
+            else
+            {
+                int counter = 20 - GameData.enemyKills;
+                enemyCounter.text = counter.ToString();
+            }
 
             //Call Spawn Enemies method from Enemy Spawner, passing in the level name to know how many enemies to spawn.
             enemySpawner.SpawnEnemies(GameData.level);
         }
-
-        Debug.Log("Coin Count: "+GameData.coinCount);
-        Debug.Log("Enemies Remaining: "+(10-GameData.enemyKills));
-        Debug.Log("Level: "+GameData.level);
     }
 
     // Update is called once per frame
@@ -67,8 +77,8 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "TitleScreen")
         {
-            if(PlayerPrefs.HasKey("coinCount"))
-                SceneManager.LoadScene("TutorialLevel");
+            if(PlayerPrefs.HasKey("level"))
+                SceneManager.LoadScene(PlayerPrefs.GetString("level"));
             else
                 SceneManager.LoadScene("InitialCutscene");
         }
@@ -109,10 +119,23 @@ public class GameManager : MonoBehaviour
         objectCounter.text = counter.ToString();
     }
 
+    public void UpdateEnemyCounter()
+    {
+        if(GameData.level == "TutorialLevel")
+        {
+            int counter = 10 - GameData.enemyKills;
+            enemyCounter.text = counter.ToString();
+        }
+        else
+        {
+            int counter = 20 - GameData.enemyKills;
+            enemyCounter.text = counter.ToString();
+        }
+    }
+
     public void SaveGame()
     {
         PlayerPrefs.SetInt("coinCount", GameData.coinCount);
-        //PlayerPrefs.SetFloat("health", GameData.health);
         PlayerPrefs.SetInt("enemyKills", GameData.enemyKills);
         PlayerPrefs.SetString("level", GameData.level);
         ChangeScene("TitleScreen");

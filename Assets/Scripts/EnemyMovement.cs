@@ -130,11 +130,17 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void CheckEnemyKills(){
-        if(GameData.level == "TutorialLevel" && GameData.enemyKills == 10)
+        if(GameData.level == "TutorialLevel")
         {
-            GameData.level = "Level01";
-            GameData.enemyKills = 0;
-            gameManager.ChangeScene(GameData.level);
+            gameManager.UpdateEnemyCounter();
+            if(GameData.enemyKills == 10)
+            {
+                GameData.level = "Level01";
+                GameData.enemyKills = 0;
+                PlayerPrefs.SetString("level",GameData.level);
+                PlayerPrefs.SetInt("enemyKills",GameData.enemyKills);
+                gameManager.ChangeScene(GameData.level);
+            }
         }
     }
 }
