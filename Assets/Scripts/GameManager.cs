@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI objectCounter;
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private GameObject deleteSaveObject;
+    [SerializeField] private GameObject HTPScreen;
+    [SerializeField] private GameObject AScreen;
     public GameObject coinObject;
     private string level;
     // Start is called before the first frame update
@@ -111,5 +113,21 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         deleteSaveObject.SetActive(false);
+    }
+    
+    public void HowToPlayScreen()
+    {
+        if(HTPScreen.activeSelf)
+            HTPScreen.SetActive(false);
+        else
+            HTPScreen.SetActive(true);
+    }
+    
+    public void AboutScreen()
+    {
+        if(AScreen.activeSelf)
+            AScreen.SetActive(false);
+        else
+            AScreen.SetActive(true);
     }
 }
