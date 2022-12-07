@@ -130,7 +130,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void CheckEnemyKills(){
-        if(GameData.enemyKills == 30)
+        if(GameData.level == "TutorialLevel" && GameData.enemyKills == 10)
         {
             Debug.Log("Boss Time!");
         }
