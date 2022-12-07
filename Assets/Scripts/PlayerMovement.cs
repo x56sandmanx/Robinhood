@@ -80,6 +80,17 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             jump.Play();
         }
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            GameData.enemyKills++;
+            Debug.Log("Enemies Killed: "+GameData.enemyKills);
+            if(GameData.level == "TutorialLevel" && GameData.enemyKills == 10)
+            {
+                GameData.level = "Level01";
+                GameData.enemyKills = 0;
+                gameManager.ChangeScene(GameData.level);
+            }
+        }
 
         velocity.y += gravity * Time.deltaTime;
 
