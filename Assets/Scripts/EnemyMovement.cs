@@ -19,6 +19,10 @@ public class EnemyMovement : MonoBehaviour
 
     private float timer;
     private float moveTime;
+    
+    public AudioSource[] sounds;
+    private AudioSource enemyDeath;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +41,9 @@ public class EnemyMovement : MonoBehaviour
         Debug.Log(healthSlider.value);
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         coinObject = gameManager.coinObject;
+        
+        sounds = GetComponents<AudioSource>();
+        enemyDeath = sounds[0];
     }
 
     // Update is called once per frame
@@ -121,12 +128,13 @@ public class EnemyMovement : MonoBehaviour
                 {
                     gameManager.ChangeScene("WinScene");
                 }
+				enemyDeath.Play();
                 int numOfCoins = Random.Range(1,5);
                 for(int i = 0;i<numOfCoins;i++)
                     Instantiate(coinObject, gameObject.transform.position, gameObject.transform.rotation);
                 GameData.enemyKills += 1;
                 CheckEnemyKills();
-                Destroy(gameObject);
+                Destroy(gameObject, .3f);
             }
         }
     }
