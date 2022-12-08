@@ -285,7 +285,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ec8ea3c868b644380b7ead0bf2b7aac2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 279cbd5ee2db142c089b0d9ac2ecac62, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.6
   m_Pitch: 1
@@ -630,7 +630,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 0}
   dialogueText: {fileID: 0}
+  boss: {fileID: 0}
+  bossSpawn: {fileID: 0}
   objectCounter: {fileID: 0}
+  enemyCounter: {fileID: 0}
   enemySpawner: {fileID: 0}
   deleteSaveObject: {fileID: 891145365}
   HTPScreen: {fileID: 215674146}
