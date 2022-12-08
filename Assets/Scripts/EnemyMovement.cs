@@ -114,6 +114,10 @@ public class EnemyMovement : MonoBehaviour
             StartCoroutine(DecreaseHealth());
             if(health == 0)
             {
+                if(gameObject.tag == "Boss")
+                {
+                    gameManager.ChangeScene("WinScene");
+                }
                 int numOfCoins = Random.Range(1,5);
                 for(int i = 0;i<numOfCoins;i++)
                     Instantiate(coinObject, gameObject.transform.position, gameObject.transform.rotation);
@@ -150,6 +154,7 @@ public class EnemyMovement : MonoBehaviour
             if(GameData.enemyKills == 20)
             {
                 Debug.Log("Boss Time!");
+                gameManager.SpawnBoss();
             }
         }
     }
