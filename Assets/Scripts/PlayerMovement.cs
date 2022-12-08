@@ -94,6 +94,14 @@ public class PlayerMovement : MonoBehaviour
                 Debug.Log(GameData.enemyKills);
                 gameManager.ChangeScene(GameData.level);
             }
+            else
+            {
+                if(GameData.enemyKills == 20)
+                {
+                    Debug.Log("Boss Time!");
+                    gameManager.SpawnBoss();
+                }
+            }
         }
 
         velocity.y += gravity * Time.deltaTime;

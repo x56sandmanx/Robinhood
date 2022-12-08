@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - GameManager
   - Enemy
+  - Boss
   layers:
   - Default
   - TransparentFX

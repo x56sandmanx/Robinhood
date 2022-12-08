@@ -27,7 +27,10 @@ public class EnemyMovement : MonoBehaviour
         //Start of random timer for moving and a moveTime that will calculate if the enemy can move or not
         timer = Random.Range(5f,10f);
         moveTime = 0;
-        health = 5;
+        if(gameObject.tag == "Boss")
+            health = 20;
+        else
+            health = 5;
         healthSlider.value = health;
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         coinObject = gameManager.coinObject;

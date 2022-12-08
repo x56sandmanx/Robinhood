@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private GameObject dialogueText;
+    [SerializeField] private GameObject boss;
+    [SerializeField] private Transform bossSpawn;
     [SerializeField] private TextMeshProUGUI objectCounter;
     [SerializeField] private TextMeshProUGUI enemyCounter;
     [SerializeField] private EnemySpawner enemySpawner;
@@ -161,5 +163,11 @@ public class GameManager : MonoBehaviour
             AScreen.SetActive(false);
         else
             AScreen.SetActive(true);
+    }
+
+    public void SpawnBoss()
+    {
+        Vector3 pos = new Vector3(bossSpawn.position.x, bossSpawn.position.y, bossSpawn.position.z);
+        Instantiate(boss, pos, Quaternion.identity);
     }
 }

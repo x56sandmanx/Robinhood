@@ -2189,6 +2189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 378495848}
   dialogueText: {fileID: 2089880213}
+  boss: {fileID: 1950796105616837741, guid: 759a9f17e3f6fb146aad3a3e83e97e8f, type: 3}
   objectCounter: {fileID: 1003079804}
   enemyCounter: {fileID: 1077054629}
   enemySpawner: {fileID: 415942380}
