@@ -1666,28 +1666,28 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The Objective of the game is to navigate each level defeating enemies
-    and defeating the final boss at the end while collecting as much treasure as
-    possible to return to the villagers.
+  m_text: 'The Objective of the game is to navigate each level defeating a certain
+    number of enemies and defeating the final boss at the end while collecting as
+    much treasure as possible to return to the villagers.
 
 
-    1. Use your mouse to look around and
-    aim your arrows.
+    1. Use your mouse
+    to look around and aim your arrows.
 
-    2. Use the arrow keys to move .
+    2. Use the arrow keys  or wasd keys
+    to move .
 
-    3. Press the spacebar
-    to jump.
+    3. Press the spacebar to jump.
 
-    4. Shoot arrows at enemies with a left click of the mouse. Once
-    an enemies health runs out, they will drop coins for you to collect by pressing
-    ''E'' over them.
+    4. Shoot arrows at enemies
+    with a left click of the mouse. Once an enemies health runs out, they will drop
+    coins for you to collect by moving over them.
 
-    5. If an enemy hits you your health will decrease. If you
-    run out of health you will lose!
+    5. If an enemy hits you your
+    health will decrease. If you run out of health you will lose!
 
-    6. Pause the game at any time with the
-    Esc key and save and quit to resume later'
+    6. Pause the
+    game at any time with the esc key and save and quit to resume later.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 699ff0ebe02ba41e1a87472868925161, type: 2}
   m_sharedMaterial: {fileID: 9010170972661041378, guid: 699ff0ebe02ba41e1a87472868925161, type: 2}
