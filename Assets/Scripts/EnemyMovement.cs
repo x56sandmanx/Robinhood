@@ -31,7 +31,10 @@ public class EnemyMovement : MonoBehaviour
             health = 20;
         else
             health = 5;
-        healthSlider.value = health;
+        Debug.Log(health);
+        healthSlider.maxValue = health;
+        healthSlider.value = healthSlider.maxValue;
+        Debug.Log(healthSlider.value);
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         coinObject = gameManager.coinObject;
     }
