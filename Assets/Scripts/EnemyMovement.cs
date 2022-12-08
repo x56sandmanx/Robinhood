@@ -130,9 +130,9 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void CheckEnemyKills(){
+        gameManager.UpdateEnemyCounter();
         if(GameData.level == "TutorialLevel")
         {
-            gameManager.UpdateEnemyCounter();
             if(GameData.enemyKills == 10)
             {
                 GameData.level = "Level01";
@@ -140,6 +140,13 @@ public class EnemyMovement : MonoBehaviour
                 PlayerPrefs.SetString("level",GameData.level);
                 PlayerPrefs.SetInt("enemyKills",GameData.enemyKills);
                 gameManager.ChangeScene(GameData.level);
+            }
+        }
+        else
+        {
+            if(GameData.enemyKills == 20)
+            {
+                Debug.Log("Boss Time!");
             }
         }
     }

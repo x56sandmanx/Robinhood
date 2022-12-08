@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
             }
 
             //Call Spawn Enemies method from Enemy Spawner, passing in the level name to know how many enemies to spawn.
-            enemySpawner.SpawnEnemies(GameData.level);
+            //enemySpawner.SpawnEnemies(GameData.level);
         }
     }
 
