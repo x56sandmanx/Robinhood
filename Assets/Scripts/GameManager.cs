@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         else
             GameData.level = "TutorialLevel";
 
-        if(level != "TitleScreen")
+        if(level != "TitleScreen" || level != "WinScene")
         {
             objectCounter.text = GameData.coinCount.ToString();
             if(GameData.level == "TutorialLevel")
@@ -163,6 +163,12 @@ public class GameManager : MonoBehaviour
             AScreen.SetActive(false);
         else
             AScreen.SetActive(true);
+    }
+
+    public void ToTitle()
+    {
+        PlayerPrefs.DeleteAll();
+        ChangeScene("TitleScreen");
     }
 
     public void SpawnBoss()
