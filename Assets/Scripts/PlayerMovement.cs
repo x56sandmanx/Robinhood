@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     float sprintSpeed = 6f;
     float moveSpeed;
     bool isGrounded;
-    
+
     public AudioSource[] sounds;
     private AudioSource jump;
 	private AudioSource treasure;
@@ -34,13 +34,13 @@ public class PlayerMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         moveSpeed = walkSpeed;
-        
+
         sounds = GetComponents<AudioSource>();
         jump = sounds[1];
         treasure = sounds[2];
         move = sounds[3];
     }
-    
+
 
     // Update is called once per frame
     void Update()
@@ -68,8 +68,8 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = walkSpeed;
         }
-        
-        
+
+
 
         //Moving player based on movement and sprint or not
         characterController.Move(moveDir * moveSpeed * Time.deltaTime);
@@ -107,31 +107,34 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Checking if the player is in range of an item that they can pick up
-        if (touchingObject != null && Input.GetKeyDown(KeyCode.E))
-        {
-            Destroy(touchingObject);
-            touchingObject = null;
-            gameManager.ShowDialogue(false);
-            gameManager.UpdateCounter();
-            treasure.Play();
-        }
+        //if (touchingObject != null && Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Destroy(touchingObject);
+        //    touchingObject = null;
+        //    gameManager.ShowDialogue(false);
+        //    gameManager.UpdateCounter();
+        //    treasure.Play();
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Coin"))
         {
-            gameManager.ShowDialogue(true);
-            touchingObject = other.gameObject;
+          //  gameManager.ShowDialogue(true);
+          //  touchingObject = other.gameObject;
+            Destroy(other.gameObject);
+            gameManager.UpdateCounter();
+            treasure.Play();
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Coin"))
-        {
-            gameManager.ShowDialogue(false);
-            touchingObject = null;
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Coin"))
+    //    {
+    //        gameManager.ShowDialogue(false);
+    //        touchingObject = null;
+    //    }
+    //}
 }
