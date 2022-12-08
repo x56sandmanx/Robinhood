@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -697,7 +697,7 @@ Transform:
   m_Children:
   - {fileID: 570232482}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &348475012
 PrefabInstance:
@@ -2380,7 +2380,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2388,7 +2388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01840645
+      value: 1.87
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2426,8 +2426,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: treasurechest (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
+      propertyPath: m_TagString
+      value: Treasure
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
+--- !u!1 &644113144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
+  m_PrefabInstance: {fileID: 644113143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &644113145
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644113144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.348175, y: 2.7204947, z: 1.9422607}
+  m_Center: {x: 0.021743774, y: 1.1467221, z: -0.1177063}
 --- !u!1001 &645513536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4132,7 +4154,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 93.433, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4230,7 +4252,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1623730920
 PrefabInstance:
@@ -4239,6 +4261,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1470527152}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 1950796105616837741, guid: 6630c4ad6a127cd4382916f3e3d70e8b, type: 3}
       propertyPath: m_Name
       value: Enemy (19)
@@ -4294,10 +4320,6 @@ PrefabInstance:
     - target: {fileID: 9078278706213127081, guid: 6630c4ad6a127cd4382916f3e3d70e8b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
-      propertyPath: m_RootOrder
-      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
@@ -4529,7 +4551,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1704804010
 PrefabInstance:
@@ -4540,7 +4562,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4548,7 +4570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.018391192
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4586,8 +4608,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: treasurechest
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
+      propertyPath: m_TagString
+      value: Treasure
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
+--- !u!1 &1704804011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
+  m_PrefabInstance: {fileID: 1704804010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1704804012
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704804011}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.32016, y: 3.2302275, z: 2.0392456}
+  m_Center: {x: -0.090286255, y: 1.1289673, z: -0.04385376}
 --- !u!1001 &1738677515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4643,8 +4687,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: treasurechest (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
+      propertyPath: m_TagString
+      value: Treasure
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
+--- !u!1 &1738677516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
+  m_PrefabInstance: {fileID: 1738677515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1738677517
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738677516}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.196594, y: 2.4992821, z: 2.0803528}
+  m_Center: {x: 0.028411865, y: 1.2901875, z: -0.11222839}
 --- !u!1001 &1758765982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5366,7 +5432,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &2147133834
 GameObject:
@@ -5413,5 +5479,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
