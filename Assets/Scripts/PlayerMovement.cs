@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayerMask;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject touchingObject;
+    [SerializeField] private Slider playerHealth;
 
     float horizontal;
     float vertical;
@@ -39,6 +41,18 @@ public class PlayerMovement : MonoBehaviour
         jump = sounds[1];
         treasure = sounds[2];
         move = sounds[3];
+        playerHealth.maxValue = 100;
+
+        if(PlayerPrefs.HasKey("health"))
+        {
+            playerHealth.value = PlayerPrefs.GetInt("health");
+            GameData.health = PlayerPrefs.GetInt("health");
+        }
+        else
+        {
+            playerHealth.value = 100;
+            GameData.health = 100;   
+        }
     }
     
 
@@ -132,6 +146,22 @@ public class PlayerMovement : MonoBehaviour
             gameManager.ShowDialogue(true);
             touchingObject = other.gameObject;
         }
+        if(other.gameObject.name == "Damage")
+        {
+            GameData.health -= 10;
+            if(GameData.health == 0)
+                gameManager.ChangeScene("LoseScene");
+            else
+                StartCoroutine(DecreaseHealth());
+        }
+        if(other.gameObject.name == "DamageBoss")
+        {
+            GameData.health -= 20;
+            if(GameData.health == 0)
+                gameManager.ChangeScene("LoseScene");
+            else
+                StartCoroutine(DecreaseHealth());
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -140,6 +170,14 @@ public class PlayerMovement : MonoBehaviour
         {
             gameManager.ShowDialogue(false);
             touchingObject = null;
+        }
+    }
+
+    IEnumerator DecreaseHealth(){
+        while(playerHealth.value >= GameData.health)
+        {
+            playerHealth.value -= 10 * Time.deltaTime;
+            yield return new WaitForEndOfFrame();
         }
     }
 }

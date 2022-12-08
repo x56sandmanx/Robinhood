@@ -157,6 +157,7 @@ public class EnemyMovement : MonoBehaviour
                 GameData.enemyKills = 0;
                 PlayerPrefs.SetString("level",GameData.level);
                 PlayerPrefs.SetInt("enemyKills",GameData.enemyKills);
+                PlayerPrefs.SetInt("health", GameData.health);
                 gameManager.ChangeScene(GameData.level);
             }
         }

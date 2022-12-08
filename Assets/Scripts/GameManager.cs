@@ -140,6 +140,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("coinCount", GameData.coinCount);
         PlayerPrefs.SetInt("enemyKills", GameData.enemyKills);
         PlayerPrefs.SetString("level", GameData.level);
+        PlayerPrefs.SetInt("health", GameData.health);
         ChangeScene("TitleScreen");
     }
 
@@ -168,7 +169,7 @@ public class GameManager : MonoBehaviour
     public void ToTitle()
     {
         PlayerPrefs.DeleteAll();
-        ChangeScene("TitleScreen");
+        ChangeScene("TitleScene");
     }
 
     public void SpawnBoss()
