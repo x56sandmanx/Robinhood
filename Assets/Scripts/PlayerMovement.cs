@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     float sprintSpeed = 6f;
     float moveSpeed;
     bool isGrounded;
-    
+
     public AudioSource[] sounds;
     private AudioSource jump;
 	private AudioSource treasure;
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         moveSpeed = walkSpeed;
-        
+
         sounds = GetComponents<AudioSource>();
         jump = sounds[1];
         treasure = sounds[2];
@@ -51,10 +51,10 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             playerHealth.value = 100;
-            GameData.health = 100;   
+            GameData.health = 100;
         }
     }
-    
+
 
     // Update is called once per frame
     void Update()
@@ -82,8 +82,8 @@ public class PlayerMovement : MonoBehaviour
         {
             moveSpeed = walkSpeed;
         }
-        
-        
+
+
 
         //Moving player based on movement and sprint or not
         characterController.Move(moveDir * moveSpeed * Time.deltaTime);
@@ -129,22 +129,36 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Checking if the player is in range of an item that they can pick up
-        if (touchingObject != null && Input.GetKeyDown(KeyCode.E))
-        {
-            Destroy(touchingObject);
-            touchingObject = null;
-            gameManager.ShowDialogue(false);
-            gameManager.UpdateCounter();
-            treasure.Play();
-        }
+        //if (touchingObject != null && Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Destroy(touchingObject);
+        //    touchingObject = null;
+        //    gameManager.ShowDialogue(false);
+        //
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Coin"))
         {
-            gameManager.ShowDialogue(true);
-            touchingObject = other.gameObject;
+            //gameManager.ShowDialogue(true);
+            Destroy(other.gameObject);
+            gameManager.UpdateCounter();
+            treasure.Play();
+            //touchingObject = other.gameObject;
+        }
+        if(other.gameObject.CompareTag("Treasure"))
+        {
+            //gameManager.ShowDialogue(true);
+            Destroy(other.gameObject);
+            gameManager.UpdateCounter();
+            gameManager.UpdateCounter();
+            gameManager.UpdateCounter();
+            gameManager.UpdateCounter();
+            gameManager.UpdateCounter();
+            treasure.Play();
+            //touchingObject = other.gameObject;
         }
         if(other.gameObject.name == "Damage")
         {
@@ -164,14 +178,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Coin"))
-        {
-            gameManager.ShowDialogue(false);
-            touchingObject = null;
-        }
-    }
+  //  private void OnTriggerExit(Collider other)
+  //  {
+  //      if (other.gameObject.CompareTag("Coin"))
+  //      {
+  //          gameManager.ShowDialogue(false);
+  //          touchingObject = null;
+  //      }
+  //  }
 
     IEnumerator DecreaseHealth(){
         while(playerHealth.value >= GameData.health)
