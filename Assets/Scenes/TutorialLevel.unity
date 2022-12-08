@@ -324,6 +324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: treasurechest
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
+      propertyPath: m_TagString
+      value: Treasure
+      objectReference: {fileID: 0}
     - target: {fileID: 2633456698259298873, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.12
@@ -3709,6 +3713,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 435.24377, y: 127.38822, z: 0}
   m_Center: {x: 72.381836, y: 12.467464, z: -9.68605}
+--- !u!1 &1622608589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
+  m_PrefabInstance: {fileID: 271628418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1622608591
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622608589}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.2840586, y: 2.2655149, z: 1.5731546}
+  m_Center: {x: 0.16718303, y: 0.63275003, z: -0.18096147}
 --- !u!1 &1636618526
 GameObject:
   m_ObjectHideFlags: 0
