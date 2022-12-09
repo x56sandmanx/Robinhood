@@ -149,6 +149,16 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteAll();
         deleteSaveObject.SetActive(false);
     }
+
+    public void Restart()
+    {
+        GameData.health = 100;
+        PlayerPrefs.SetInt("health", GameData.health);
+        if(PlayerPrefs.HasKey("level"))
+            ChangeScene(PlayerPrefs.GetString("level"));
+        else
+            ChangeScene("TutorialLevel");
+    }
     
     public void HowToPlayScreen()
     {

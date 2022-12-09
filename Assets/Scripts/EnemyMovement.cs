@@ -56,7 +56,6 @@ public class EnemyMovement : MonoBehaviour
             isMoving = false;
 
         if(isMoving) {
-            Debug.Log("Test");
           anim.Play("Walk");
         } else {
           anim.Play("Idle");
