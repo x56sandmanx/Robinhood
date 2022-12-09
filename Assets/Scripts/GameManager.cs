@@ -177,7 +177,7 @@ public class GameManager : MonoBehaviour
     public void ToTitle()
     {
         PlayerPrefs.DeleteAll();
-        ChangeScene("TitleScene");
+        ChangeScene("TitleScreen");
     }
 
     public void SpawnBoss()
