@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c913062afcec0447825f8d5505b2591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 1945262095764267016}
   wanderMode: 1
   isMoving: 0
   navAgent: {fileID: 1950796105616837743}
@@ -588,19 +589,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4519312651944181024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283213572456648316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77f89931dc69e4799907bca4c512705d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  script: {fileID: 1950796105616837736}
 --- !u!4 &623182930313303238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 85816612e4aff4ab3b04336098931afe, type: 3}
