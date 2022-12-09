@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c913062afcec0447825f8d5505b2591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 8530108586121558104}
   wanderMode: 1
   isMoving: 0
   navAgent: {fileID: 1950796105616837743}
