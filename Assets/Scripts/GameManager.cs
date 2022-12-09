@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         level = SceneManager.GetActiveScene().name;
 
+        if(level == "WinScene" || level == "LoseScene")
+            Cursor.lockState = CursorLockMode.None;
+        else
+            Cursor.lockState = CursorLockMode.Locked;
+
         if(level == "TitleScreen")
         {
             if(PlayerPrefs.HasKey("coinCount"))
