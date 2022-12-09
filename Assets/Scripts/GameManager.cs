@@ -43,10 +43,7 @@ public class GameManager : MonoBehaviour
         else
             GameData.enemyKills = 0;
         if(PlayerPrefs.HasKey("level"))
-        {
             GameData.level = PlayerPrefs.GetString("level");
-            Debug.Log("Getting Level");
-        }
         else
             GameData.level = "TutorialLevel";
 
@@ -137,6 +134,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveGame()
     {
+        Debug.Log("Clicked");
         PlayerPrefs.SetInt("coinCount", GameData.coinCount);
         PlayerPrefs.SetInt("enemyKills", GameData.enemyKills);
         PlayerPrefs.SetString("level", GameData.level);
