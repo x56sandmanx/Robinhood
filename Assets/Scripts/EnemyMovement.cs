@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class EnemyMovement : MonoBehaviour
 {
 
-    Animator anim;
+    public Animator anim;
     [SerializeField] public bool wanderMode = true;
     public bool isMoving = false;
     [SerializeField] private NavMeshAgent navAgent;
@@ -26,7 +26,6 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         //Start of random timer for moving and a moveTime that will calculate if the enemy can move or not
         timer = Random.Range(5f,10f);
@@ -57,9 +56,10 @@ public class EnemyMovement : MonoBehaviour
             isMoving = false;
 
         if(isMoving) {
-          anim.SetBool("isWalking", true);
+            Debug.Log("Test");
+          anim.Play("Walk");
         } else {
-          anim.SetBool("isWalking", false);
+          anim.Play("Idle");
         }
 
 
