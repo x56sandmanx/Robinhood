@@ -18,12 +18,7 @@ public class PersonMovement : MonoBehaviour
       if(script.isMoving) {
         anim.SetBool("isWalking", true);
       } else {
-        Invoke("setIdle", 1);
+        anim.SetBool("isWalking", false);
       }
-    }
-
-    void setIdle()
-    {
-      anim.SetBool("isWalking", false);
     }
 }

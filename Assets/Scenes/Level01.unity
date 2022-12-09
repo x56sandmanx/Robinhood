@@ -3363,9 +3363,33 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4925210729759361580, guid: 0d165e439008e5c4fa200d92bb0e43ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925210729759361580, guid: 0d165e439008e5c4fa200d92bb0e43ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 851611835}
+    - target: {fileID: 4925210729759361580, guid: 0d165e439008e5c4fa200d92bb0e43ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925210729759361580, guid: 0d165e439008e5c4fa200d92bb0e43ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925210729759361580, guid: 0d165e439008e5c4fa200d92bb0e43ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4925210729759361580, guid: 0d165e439008e5c4fa200d92bb0e43ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4925210730073876875, guid: 0d165e439008e5c4fa200d92bb0e43ce, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4925210730073876875, guid: 0d165e439008e5c4fa200d92bb0e43ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4641,7 +4665,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 552d6c7a9db574cef960ad351011a54b, type: 3}
       propertyPath: m_LocalPosition.x
