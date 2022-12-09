@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
 {
 
     Animator anim;
-    [SerializeField] private bool wanderMode = true;
+    [SerializeField] public bool wanderMode = true;
     public bool isMoving = false;
     [SerializeField] private NavMeshAgent navAgent;
     [SerializeField] private Transform playerPos;
@@ -19,10 +19,10 @@ public class EnemyMovement : MonoBehaviour
 
     private float timer;
     private float moveTime;
-    
+
     public AudioSource[] sounds;
     private AudioSource enemyDeath;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +41,7 @@ public class EnemyMovement : MonoBehaviour
         Debug.Log(healthSlider.value);
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         coinObject = gameManager.coinObject;
-        
+
         sounds = GetComponents<AudioSource>();
         enemyDeath = sounds[0];
     }

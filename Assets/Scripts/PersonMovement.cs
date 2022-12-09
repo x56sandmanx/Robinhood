@@ -17,7 +17,8 @@ public class PersonMovement : MonoBehaviour
     {
       if(script.isMoving) {
         anim.SetBool("isWalking", true);
-      } else {
+      } 
+      else {
         anim.SetBool("isWalking", false);
       }
     }
