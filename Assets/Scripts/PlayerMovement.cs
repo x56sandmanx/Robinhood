@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource[] sounds;
     private AudioSource jump;
 	private AudioSource treasure;
-	private AudioSource move;
+	private AudioSource damage;
 
     Vector3 moveDir;
     Vector3 velocity;
@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         sounds = GetComponents<AudioSource>();
         jump = sounds[1];
         treasure = sounds[2];
-        move = sounds[3];
+        damage = sounds[3];
         playerHealth.maxValue = 100;
 
         if(PlayerPrefs.HasKey("health"))
@@ -167,6 +167,7 @@ public class PlayerMovement : MonoBehaviour
                 gameManager.ChangeScene("LoseScene");
             else
                 StartCoroutine(DecreaseHealth());
+            damage.Play();
         }
         if(other.gameObject.name == "DamageBoss")
         {
@@ -175,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
                 gameManager.ChangeScene("LoseScene");
             else
                 StartCoroutine(DecreaseHealth());
+            damage.Play();
         }
     }
 
