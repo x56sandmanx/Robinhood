@@ -2,7 +2,28 @@ fileFormatVersion: 2
 guid: c43af320a568e481dbbf6ce16ce8d081
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -1978303741906493279
+    second: Armature|idle
+  - first:
+      74: 4396564986115863379
+    second: metarig.001|idle
+  - first:
+      74: -4871019176658921168
+    second: metarig.001|metarig.001
+  - first:
+      74: -3773528098017054933
+    second: metarig.001|metarig.001Action
+  - first:
+      74: -5647620054606475169
+    second: metarig.001|metarig.002
+  - first:
+      74: 1981442465662178744
+    second: metarig.001|Walk
+  - first:
+      74: 3926840085725345541
+    second: rig.001|idle
   externalObjects: {}
   materials:
     materialImportMode: 2
